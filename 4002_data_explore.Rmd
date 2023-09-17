@@ -10,7 +10,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 ```{r}
-data<-read.csv("/Users/jianingcai/Downloads/Data Compilation - all years.csv")
+data<-read.csv("/Users/jianingcai/Downloads/Data Compilation - all years (1).csv")
 data
 ```
 
@@ -25,18 +25,87 @@ genre_data
 ```
 
 ```{r}
-#genre_vector
+unique(genre_vector)
 ```
 
 ```{r}
 library(ggplot2)
-ggplot(genre_data, aes(x = Year, fill = Genre)) +
+
+colors<-c("#beb9db", "#fdcce5", "#ffee65", "#ffb55a", "#D0FC6F",
+  "#FC6FB8", "#DE6FFC", "#8E6FFC", "#6FE0FC", "#6FFC7D",
+  "#8bd3c7", "#b2e061", "#FC9C6F", "#fd7f6f", "#D4D392",
+  "#7eb0d5", "#D49293", "#bd7ebe", "#824141")
+# Create your ggplot
+plot <- ggplot(genre_data, aes(x = Year, fill = Genre)) +
   geom_bar() +
+  labs(title = "Genre Occurrences by Year", x = "Year", y = "Count") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))+
+  scale_fill_manual(values = colors)
+
+# Save the plot as a file (e.g., in PNG format)
+ggsave("genre_occurrences_by_year2.jpg", plot, width = 8, height = 6)
+
+# You can change the format (e.g., to PDF) and adjust the width and height as needed.
+
+```
+
+
+```{r}
+# Split the "Genres" column into separate genres
+genre_list <- strsplit(data$Genre, ", ")
+genre_vector <- unlist(genre_list)
+
+# Create a new data frame with one row per genre
+genre_data <- data.frame(Year = rep(data$Year, sapply(genre_list, length)), Genre = genre_vector)
+
+# Get unique genres in the dataset
+unique_genres <- unique(genre_data$Genre)
+
+# Create separate bar plots for each genre
+plots_list <- list()
+
+for (genre in unique_genres) {
+  genre_data_subset <- subset(genre_data, Genre == genre)
+  
+  # Aggregate the data to calculate the count of the genre for each year
+  genre_counts <- genre_data_subset %>%
+    group_by(Year) %>%
+    summarise(Count = n()) %>%
+    ungroup()
+  
+  # Create a line plot for the current genre
+  p <- ggplot(genre_counts, aes(x = Year, y = Count)) +
+    geom_line() +
+    labs(title = paste("Occurrence of Genre:", genre), x = "Year", y = "Count") +
+    theme_minimal() +
+    theme(axis.text.x = element_text(angle = 45, hjust = 1))
+  
+  # Print or save the plot (adjust file names or print statements as needed)
+  plots_list[[length(plots_list) + 1]] <- p
+}
+
+pdf("genre_occurrence_plots.pdf", width = 16, height = 12)
+grid.arrange(grobs = plots_list, ncol = 4)
+dev.off()
+```
+
+```{r}
+library(ggplot2)
+ggplot(genre_data, aes(x = Year, y = ..count.., color = Genre)) +
+  geom_line(stat = "count") +  # Use geom_line() to create a line graph
   labs(title = "Genre Occurrences by Year", x = "Year", y = "Count") +
   theme_minimal() +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 
 ```
+
+```{r}
+install.packages("gridExtra")
+library(gridExtra)
+library(ggplot2)
+```
+
 
 ```{r}
 # Split the "Genres" column into separate genres
@@ -49,10 +118,9 @@ genre_data <- data.frame(Year = rep(data$Year, sapply(genre_list, length)), Genr
 # Get unique years in the dataset
 unique_years <- unique(genre_data$Year)
 
-# Install and load the ggplot2 package
-library(ggplot2)
-layout(matrix(1:(6*4), nrow = 6, ncol = 4))
 # Create separate bar plots for each year
+plots_list <- list()
+
 for (year in unique_years) {
   year_data <- subset(genre_data, Year == year)
   
@@ -64,10 +132,11 @@ for (year in unique_years) {
     theme(axis.text.x = element_text(angle = 45, hjust = 1))
   
   # Print or save the plot (adjust file names or print statements as needed)
-  print(p)
+ plots_list[[length(plots_list) + 1]] <- p
 }
-
-
+pdf("genre_plots_grid.pdf", width = 16, height = 12)
+grid.arrange(grobs = plots_list, ncol = 4)
+dev.off()
 ```
 
 
