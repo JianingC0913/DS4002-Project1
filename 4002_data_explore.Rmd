@@ -1,0 +1,78 @@
+---
+title: "4002data_explore"
+author: "Jianing Cai"
+date: "2023-09-17"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+data<-read.csv("/Users/jianingcai/Downloads/Data Compilation - all years.csv")
+data
+```
+
+```{r}
+# Split the "Genres" column into separate genres
+genre_list <- strsplit(data$Genre, ", ")
+genre_vector <- unlist(genre_list)
+
+# Create a new data frame with one row per genre
+genre_data <- data.frame(Year = rep(data$Year, sapply(genre_list, length)), Genre = genre_vector)
+genre_data
+```
+
+```{r}
+#genre_vector
+```
+
+```{r}
+library(ggplot2)
+ggplot(genre_data, aes(x = Year, fill = Genre)) +
+  geom_bar() +
+  labs(title = "Genre Occurrences by Year", x = "Year", y = "Count") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+```
+
+```{r}
+# Split the "Genres" column into separate genres
+genre_list <- strsplit(data$Genre, ", ")
+genre_vector <- unlist(genre_list)
+
+# Create a new data frame with one row per genre
+genre_data <- data.frame(Year = rep(data$Year, sapply(genre_list, length)), Genre = genre_vector)
+
+# Get unique years in the dataset
+unique_years <- unique(genre_data$Year)
+
+# Install and load the ggplot2 package
+library(ggplot2)
+layout(matrix(1:(6*4), nrow = 6, ncol = 4))
+# Create separate bar plots for each year
+for (year in unique_years) {
+  year_data <- subset(genre_data, Year == year)
+  
+  # Create a bar plot for the current year
+  p <- ggplot(year_data, aes(x = Genre)) +
+    geom_bar() +
+    labs(title = paste("Genre Distribution for Year", year), x = "Genre", y = "Count") +
+    theme_minimal() +
+    theme(axis.text.x = element_text(angle = 45, hjust = 1))
+  
+  # Print or save the plot (adjust file names or print statements as needed)
+  print(p)
+}
+
+
+```
+
+
+
+
+
+
+
