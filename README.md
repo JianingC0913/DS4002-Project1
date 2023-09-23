@@ -13,7 +13,17 @@
 · genre_spread_viz.twb: This file is used to visualize the trend of both economy recession indicator and each movie genre throughout the year.
 
 ## DATA section
+· (year).txt: These text file do not have any variables or columns, they only contain the top 10 movie script in plain text format for the corresponding year.  
+· annually_top_10.csv:  
+| Column Number | Description |
+|---------------|-------------|
+|  0  |  Specific year  |
+|  1-10  |  Movie name, and the column number represents its ranking in the corresponding year |
 
 ## FIGURES section
 
 ## REFERENCES section
+[1]“Domestic Box Office For 2006,” Box Office Mojo. https://www.boxofficemojo.com/year/2006/?grossesOption=calendarGrosses (accessed Sep. 17, 2023).  
+[2]“Movies: List of All American Movies (2008-2021),” www.kaggle.com. https://www.kaggle.com/datasets/paritosh712/movies-list-of-all-american-movies-20082021  
+[3]“What Is the Probability of a Recession? The Message from Yield Spreads,” www.stlouisfed.org. https://www.stlouisfed.org/on-the-economy/2023/sep/what-probability-recession-message-yield-spreads#:~:text=10%2DYear%2DThree%2DMonth%20Yield%20Spread (accessed Sep. 17, 2023).  
+[4]Board of Governors of the Federal Reserve System (US), “10-Year Treasury Constant Maturity Rate,” FRED, Federal Reserve Bank of St. Louis, Jan. 02, 1962. https://fred.stlouisfed.org/series/DGS10#0
