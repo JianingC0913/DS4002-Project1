@@ -19,6 +19,7 @@
 |---------------|-------------|
 |  0  |  Specific year  |
 |  1-10  |  Movie name, and the column number represents its ranking in the corresponding year |  
+
 · **combined_data.csv**:  
 | Variable Name | Description |
 |---------------|-------------|
