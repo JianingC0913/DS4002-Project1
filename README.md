@@ -44,6 +44,12 @@
 
 
 ## FIGURES section
+| Figure Name | Description | Takeaways |
+|---------------|-------------|--------|
+|genre_occurrence_plots.pdf| This file contains plots of how many time a certain genre appeared throughout the years. Each plot represent one unique genre.| Adventure and Action, and Sci-fi (after 2013) seem to be the highest-grossing movie genres throughout 2000-2023.|
+|genre_plots_grid.pdf|This file contains plots of the distribution of genres within a certain year. Each plot represent one unique year.| After 2007, movies within the genre of Family appeared to rise. Genres related to Mystery, Musical, and Romance are stagnantly low.|
+|genre_occurrence_by_year.png/genre_occurrence_by_year2.jpg| These two graphs are stacked bar graph that represent the distribution of genre within each year. Each bar is a unique year, and each color is a unique genre. These two plots are essentially the same, the only difference is the color palette that is being used.|According to the graph above, the majority of the movies released from 2000 to 2023 fell into the category of Action and Adventure.|  
+
 
 ## REFERENCES section
 [1]“Domestic Box Office For 2006,” Box Office Mojo. https://www.boxofficemojo.com/year/2006/?grossesOption=calendarGrosses (accessed Sep. 17, 2023).  
