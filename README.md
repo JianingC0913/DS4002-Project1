@@ -41,6 +41,18 @@
 | Genre | A list of genre that associate with the movie |
 | Genre1 - Genre8 | Split out the genres from Genre column |  
 
+· **total gross by genre by years.xlsx**:  
+  | Variable Name | Description | 
+  |---------------|-------------| 
+  | Year | Specific year | 
+  | Spread | The economy recession indicator of a specific year | 
+  | Action | Box office revenue in dollars adjusted by inflation | 
+  | Thriller | Box office revenue in dollars adjusted by inflation | 
+  | Comedy | Box office revenue in dollars adjusted by inflation | 
+  | A | Box office revenue in 10^9 dollars adjusted by inflation |  
+  | T | Box office revenue in 10^9 dollars adjusted by inflation |  
+  | C | Box office revenue in 10^9 dollars adjusted by inflation |  
+
 
 
 ## FIGURES section
