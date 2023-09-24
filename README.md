@@ -55,4 +55,8 @@
 [1]“Domestic Box Office For 2006,” Box Office Mojo. https://www.boxofficemojo.com/year/2006/?grossesOption=calendarGrosses (accessed Sep. 17, 2023).  
 [2]“Movies: List of All American Movies (2008-2021),” www.kaggle.com. https://www.kaggle.com/datasets/paritosh712/movies-list-of-all-american-movies-20082021  
 [3]“What Is the Probability of a Recession? The Message from Yield Spreads,” www.stlouisfed.org. https://www.stlouisfed.org/on-the-economy/2023/sep/what-probability-recession-message-yield-spreads#:~:text=10%2DYear%2DThree%2DMonth%20Yield%20Spread (accessed Sep. 17, 2023).  
-[4]Board of Governors of the Federal Reserve System (US), “10-Year Treasury Constant Maturity Rate,” FRED, Federal Reserve Bank of St. Louis, Jan. 02, 1962. https://fred.stlouisfed.org/series/DGS10#0
+[4]Board of Governors of the Federal Reserve System (US), “10-Year Treasury Constant Maturity Rate,” FRED, Federal Reserve Bank of St. Louis, Jan. 02, 1962. https://fred.stlouisfed.org/series/DGS10#0  
+
+Milestone 1: https://docs.google.com/document/d/1bD_SmjDqFXryMQaFdDJc0TetDrjuSKgjMCCFr_pSokI/edit?usp=drive_link  
+Milestone 2: https://docs.google.com/document/d/1y1DW8-972_-OMUzzbV57p-HqqTyybpA8hSUemH7mwLo/edit?usp=drive_link  
+
