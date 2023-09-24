@@ -29,7 +29,19 @@
 | Name | The movie name |
 | Genre | A list of genre that associate with the movie |
 | Genre1 - Genre8 | Split out the genres from Genre column |
-| *Rest of the Columns* | The number of the corresponding genre that existed in the top 10 movie corresponding year |
+| *Rest of the Columns* | The number of the corresponding genre that existed in the top 10 movie corresponding year |  
+
+· **Data Compilation-all years.csv**:  
+| Variable Name | Description |
+|---------------|-------------|
+| Year | Specific year |
+| Spread | The economy recession indicator of a specific year |
+| Rank | How the moive ranked in a specific year |
+| Name | The movie name |
+| Genre | A list of genre that associate with the movie |
+| Genre1 - Genre8 | Split out the genres from Genre column |  
+
+
 
 ## FIGURES section
 
